@@ -10,9 +10,9 @@ CONF_COL = 1
 WINS_COL = 2
 LOSSES_COL = 3
 PCT_COL = 4
-PTS_FOR = 5
-PTS_AGAINST = 6
-SOS_COL = 8
+PTS_FOR = 8
+PTS_AGAINST = 9
+SOS_COL = 11
 
 all_teams = 'https://www.sports-reference.com/cfb/years/{year}-standings.html'.replace('{year}', str(year))
 team = 'https://www.sports-reference.com/cfb/schools/{school}/{year}.html'.replace('{year}', str(year))
@@ -42,7 +42,7 @@ for row in table.findAll('tr'):
 for school in schools:
     school.rank = float(school.percentage) * float(school.sos)
 
-schools.sort(key=lambda x: x.rank, reverse=True)
+schools.sort(key=lambda x: float(x.rank), reverse=True)
 
 i = 1
 for school in schools:

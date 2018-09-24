@@ -17,7 +17,7 @@ class Team(object):
         return Team(name, wins, losses, percentage, points_for, points_against, sos, conference)
 
     def __str__(self):
-        return self.name + '\t\t\t' + str(self.rank) + '\t' + self.conference
+        return self.name + ' ' + str(self.rank) + ' ' + self.conference + ' ' + self.sos
 
     def __repr__(self):
         return self.__str__()
