@@ -1,4 +1,8 @@
-class Stats(Object):
+class Stats(object):
+
+    def __init__(self):
+        pass
+
     def __init__(self, comp_pct, pass_yds, pass_td, rush_yds, rush_avg,
                  rush_td, num_plays, total_yds, total_fd, num_penalties, turnovers):
         self.comp_pct = comp_pct
@@ -17,3 +21,10 @@ class Stats(Object):
                    rush_td, num_plays, total_yds, total_fd, num_penalties, turnovers):
         return Stats(comp_pct, pass_yds, pass_td, rush_yds, rush_avg,
                      rush_td, num_plays, total_yds, total_fd, num_penalties, turnovers)
+
+    def __str__(self) -> str:
+        return str(self.comp_pct) + ' ' + str(self.pass_yds) + ' ' + str(self.pass_td) + ' ' + str(self.rush_yds) + ' ' + str(self.rush_td) + ' ' + str(self.num_plays) + ' ' + str(self.total_yds) + ' ' + str(self.total_fd) + ' ' + str(self.num_penalties) + ' ' + str(self.turnovers)
+
+    def __repr__(self) -> str:
+        return super().__repr__()
+

@@ -1,5 +1,11 @@
+import stats
+
 class Team(object):
     rank = 0
+    offense = None
+    defense = None
+    offensive_score = 0
+    defensive_score = 0
 
     def __init__(self, name, wins, losses, percentage,
                  points_for, points_against, sos, conference):
@@ -12,12 +18,12 @@ class Team(object):
         self.sos = sos
         self.conference = conference
 
-    def make_team(name, wins, losses, percentage,
+    def make_team(self, name, wins, losses, percentage,
                   points_for, points_against, sos, conference):
         return Team(name, wins, losses, percentage, points_for, points_against, sos, conference)
 
     def __str__(self):
-        return self.name + ' ' + str(self.rank) + ' ' + self.conference + ' ' + self.sos
+        return self.name + ' ' + str(self.rank) + ' ' + self.conference
 
     def __repr__(self):
         return self.__str__()
